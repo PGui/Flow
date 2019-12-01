@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ModuleInterface.h"
-#include "ModuleManager.h"
-#include "SlateStyle.h"
+#include "Modules/ModuleInterface.h"
+#include "Modules/ModuleManager.h"
+#include "Styling/SlateStyle.h"
 
 class FFlowExamplesEditorModule : public IModuleInterface
 {
