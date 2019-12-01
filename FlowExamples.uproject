@@ -8,6 +8,17 @@
 			"Name": "FlowExamples",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
+		},
+		{
+			"Name": "FlowExamplesEditor",
+			"Type": "Editor",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "Flow",
+			"Enabled": true
 		}
 	]
 }
