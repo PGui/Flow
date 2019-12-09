@@ -11,12 +11,12 @@
 		"MajorVersion": 4,
 		"MinorVersion": 24,
 		"PatchVersion": 0,
-		"Changelist": 10387632,
-		"CompatibleChangelist": 10387632,
+		"Changelist": 10570792,
+		"CompatibleChangelist": 10570792,
 		"IsLicenseeVersion": 0,
 		"IsPromotedBuild": 1,
 		"BranchName": "++UE4+Release-4.24",
-		"BuildId": "10387632",
+		"BuildId": "10570792",
 		"BuildVersion": ""
 	},
 	"BuildProducts": [
@@ -1173,19 +1173,19 @@
 			"Type": "SymbolFile"
 		},
 		{
-			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Slate.dll",
-			"Type": "DynamicLibrary"
-		},
-		{
-			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Slate.pdb",
-			"Type": "SymbolFile"
-		},
-		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Settings.dll",
 			"Type": "DynamicLibrary"
 		},
 		{
 			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Settings.pdb",
+			"Type": "SymbolFile"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Slate.dll",
+			"Type": "DynamicLibrary"
+		},
+		{
+			"Path": "$(EngineDir)/Binaries/Win64/UE4Editor-Slate.pdb",
 			"Type": "SymbolFile"
 		},
 		{
