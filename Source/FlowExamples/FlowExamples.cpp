@@ -1,5 +1,12 @@
 #include "FlowExamples.h"
-#include "Modules/ModuleManager.h"
 
-IMPLEMENT_PRIMARY_GAME_MODULE( FDefaultGameModuleImpl, FlowExamples, "FlowExamples" );
- 
+void FFlowExamplesModule::StartupModule()
+{
+}
+
+void FFlowExamplesModule::ShutdownModule()
+{
+}
+
+IMPLEMENT_PRIMARY_GAME_MODULE(FDefaultGameModuleImpl, FlowExamples, "FlowExamples");
+DEFINE_LOG_CATEGORY(LogGame);

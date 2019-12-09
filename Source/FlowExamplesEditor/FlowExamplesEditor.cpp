@@ -1,7 +1,5 @@
 #include "FlowExamplesEditor.h"
 
-IMPLEMENT_GAME_MODULE(FFlowExamplesEditorModule, FlowExamplesEditor);
-
 void FFlowExamplesEditorModule::StartupModule()
 {
 }
@@ -9,3 +7,5 @@ void FFlowExamplesEditorModule::StartupModule()
 void FFlowExamplesEditorModule::ShutdownModule()
 {
 }
+
+IMPLEMENT_GAME_MODULE(FFlowExamplesEditorModule, FlowExamplesEditor);
