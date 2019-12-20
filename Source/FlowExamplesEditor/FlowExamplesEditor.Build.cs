@@ -4,6 +4,8 @@ public class FlowExamplesEditor : ModuleRules
 {
     public FlowExamplesEditor(ReadOnlyTargetRules Target) : base(Target)
     {
+        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+
         PublicDependencyModuleNames.AddRange(
             new string[]
             {
