@@ -1,13 +1,15 @@
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "FlowExamplesCharacter.generated.h"
+#include "ExamplesCharacter.generated.h"
 
 class UInputComponent;
 
 UCLASS(config=Game)
-class AFlowExamplesCharacter : public ACharacter
+class AExamplesCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -44,7 +46,7 @@ class AFlowExamplesCharacter : public ACharacter
 	class UMotionControllerComponent* L_MotionController;
 
 public:
-	AFlowExamplesCharacter();
+	AExamplesCharacter();
 
 protected:
 	virtual void BeginPlay();
@@ -64,7 +66,7 @@ public:
 
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category=Projectile)
-	TSubclassOf<class AFlowExamplesProjectile> ProjectileClass;
+	TSubclassOf<class AExamplesProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)

@@ -1,14 +1,16 @@
-#include "FlowExamplesProjectile.h"
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
+#include "ExamplesProjectile.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 #include "Components/SphereComponent.h"
 
-AFlowExamplesProjectile::AFlowExamplesProjectile() 
+AExamplesProjectile::AExamplesProjectile() 
 {
 	// Use a sphere as a simple collision representation
 	CollisionComp = CreateDefaultSubobject<USphereComponent>(TEXT("SphereComp"));
 	CollisionComp->InitSphereRadius(5.0f);
 	CollisionComp->BodyInstance.SetCollisionProfileName("Projectile");
-	CollisionComp->OnComponentHit.AddDynamic(this, &AFlowExamplesProjectile::OnHit);		// set up a notification for when this component hits something blocking
+	CollisionComp->OnComponentHit.AddDynamic(this, &AExamplesProjectile::OnHit);		// set up a notification for when this component hits something blocking
 
 	// Players can't walk on it
 	CollisionComp->SetWalkableSlopeOverride(FWalkableSlopeOverride(WalkableSlope_Unwalkable, 0.f));
@@ -29,7 +31,7 @@ AFlowExamplesProjectile::AFlowExamplesProjectile()
 	InitialLifeSpan = 3.0f;
 }
 
-void AFlowExamplesProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void AExamplesProjectile::OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())

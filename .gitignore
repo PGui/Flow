@@ -7,12 +7,10 @@
 
 *.sln
 
+*.exe
 *.exp
 *.lib
+*.pdb
 *Shipping.exe
 *Shipping.pdb
 *Shipping.target
-
-Binaries/Win64/FlowExamples.exe
-Binaries/Win64/FlowExamples.pdb
-Binaries/Win64/FlowExamples.target

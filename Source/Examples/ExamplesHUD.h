@@ -1,16 +1,18 @@
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
 #pragma once 
 
 #include "CoreMinimal.h"
 #include "GameFramework/HUD.h"
-#include "FlowExamplesHUD.generated.h"
+#include "ExamplesHUD.generated.h"
 
 UCLASS()
-class AFlowExamplesHUD : public AHUD
+class AExamplesHUD : public AHUD
 {
 	GENERATED_BODY()
 
 public:
-	AFlowExamplesHUD();
+	AExamplesHUD();
 
 	/** Primary draw call for the HUD */
 	virtual void DrawHUD() override;

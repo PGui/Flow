@@ -1,5 +1,7 @@
-#include "FlowExamplesCharacter.h"
-#include "FlowExamplesProjectile.h"
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
+#include "ExamplesCharacter.h"
+#include "ExamplesProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -13,9 +15,9 @@
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
 //////////////////////////////////////////////////////////////////////////
-// AFlowExamplesCharacter
+// AExamplesCharacter
 
-AFlowExamplesCharacter::AFlowExamplesCharacter()
+AExamplesCharacter::AExamplesCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -82,7 +84,7 @@ AFlowExamplesCharacter::AFlowExamplesCharacter()
 	//bUsingMotionControllers = true;
 }
 
-void AFlowExamplesCharacter::BeginPlay()
+void AExamplesCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
@@ -106,7 +108,7 @@ void AFlowExamplesCharacter::BeginPlay()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void AFlowExamplesCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void AExamplesCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// set up gameplay key bindings
 	check(PlayerInputComponent);
@@ -116,27 +118,27 @@ void AFlowExamplesCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AFlowExamplesCharacter::OnFire);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AExamplesCharacter::OnFire);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFlowExamplesCharacter::OnResetVR);
+	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AExamplesCharacter::OnResetVR);
 
 	// Bind movement events
-	PlayerInputComponent->BindAxis("MoveForward", this, &AFlowExamplesCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AFlowExamplesCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AExamplesCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AExamplesCharacter::MoveRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &AFlowExamplesCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("TurnRate", this, &AExamplesCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &AFlowExamplesCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &AExamplesCharacter::LookUpAtRate);
 }
 
-void AFlowExamplesCharacter::OnFire()
+void AExamplesCharacter::OnFire()
 {
 	// try and fire a projectile
 	if (ProjectileClass != NULL)
@@ -148,7 +150,7 @@ void AFlowExamplesCharacter::OnFire()
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<AFlowExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				World->SpawnActor<AExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
 			}
 			else
 			{
@@ -161,7 +163,7 @@ void AFlowExamplesCharacter::OnFire()
 				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
 				// spawn the projectile at the muzzle
-				World->SpawnActor<AFlowExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+				World->SpawnActor<AExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 			}
 		}
 	}
@@ -184,12 +186,12 @@ void AFlowExamplesCharacter::OnFire()
 	}
 }
 
-void AFlowExamplesCharacter::OnResetVR()
+void AExamplesCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
-void AFlowExamplesCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
+void AExamplesCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
 	if (TouchItem.bIsPressed == true)
 	{
@@ -205,7 +207,7 @@ void AFlowExamplesCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, con
 	TouchItem.bMoved = false;
 }
 
-void AFlowExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
+void AExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
 	if (TouchItem.bIsPressed == false)
 	{
@@ -217,7 +219,7 @@ void AFlowExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const
 //Commenting this section out to be consistent with FPS BP template.
 //This allows the user to turn without using the right virtual joystick
 
-//void AFlowExamplesCharacter::TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location)
+//void AExamplesCharacter::TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location)
 //{
 //	if ((TouchItem.bIsPressed == true) && (TouchItem.FingerIndex == FingerIndex))
 //	{
@@ -252,7 +254,7 @@ void AFlowExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const
 //	}
 //}
 
-void AFlowExamplesCharacter::MoveForward(float Value)
+void AExamplesCharacter::MoveForward(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -261,7 +263,7 @@ void AFlowExamplesCharacter::MoveForward(float Value)
 	}
 }
 
-void AFlowExamplesCharacter::MoveRight(float Value)
+void AExamplesCharacter::MoveRight(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -270,27 +272,27 @@ void AFlowExamplesCharacter::MoveRight(float Value)
 	}
 }
 
-void AFlowExamplesCharacter::TurnAtRate(float Rate)
+void AExamplesCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AFlowExamplesCharacter::LookUpAtRate(float Rate)
+void AExamplesCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-bool AFlowExamplesCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerInputComponent)
+bool AExamplesCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerInputComponent)
 {
 	if (FPlatformMisc::SupportsTouchInput() || GetDefault<UInputSettings>()->bUseMouseForTouch)
 	{
-		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AFlowExamplesCharacter::BeginTouch);
-		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AFlowExamplesCharacter::EndTouch);
+		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AExamplesCharacter::BeginTouch);
+		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AExamplesCharacter::EndTouch);
 
 		//Commenting this out to be more consistent with FPS BP template.
-		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AFlowExamplesCharacter::TouchUpdate);
+		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AExamplesCharacter::TouchUpdate);
 		return true;
 	}
 	

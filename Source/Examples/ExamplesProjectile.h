@@ -1,11 +1,13 @@
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
 #pragma once
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "FlowExamplesProjectile.generated.h"
+#include "ExamplesProjectile.generated.h"
 
 UCLASS(config=Game)
-class AFlowExamplesProjectile : public AActor
+class AExamplesProjectile : public AActor
 {
 	GENERATED_BODY()
 
@@ -18,7 +20,7 @@ class AFlowExamplesProjectile : public AActor
 	class UProjectileMovementComponent* ProjectileMovement;
 
 public:
-	AFlowExamplesProjectile();
+	AExamplesProjectile();
 
 	/** called when projectile hits something */
 	UFUNCTION()

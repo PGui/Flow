@@ -1,11 +1,13 @@
-#include "FlowExamplesHUD.h"
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
+#include "ExamplesHUD.h"
 #include "Engine/Canvas.h"
 #include "Engine/Texture2D.h"
 #include "TextureResource.h"
 #include "CanvasItem.h"
 #include "UObject/ConstructorHelpers.h"
 
-AFlowExamplesHUD::AFlowExamplesHUD()
+AExamplesHUD::AExamplesHUD()
 {
 	// Set the crosshair texture
 	static ConstructorHelpers::FObjectFinder<UTexture2D> CrosshairTexObj(TEXT("/Game/FirstPerson/Textures/FirstPersonCrosshair"));
@@ -13,7 +15,7 @@ AFlowExamplesHUD::AFlowExamplesHUD()
 }
 
 
-void AFlowExamplesHUD::DrawHUD()
+void AExamplesHUD::DrawHUD()
 {
 	Super::DrawHUD();
 

@@ -1,9 +1,11 @@
-#include "FlowExamplesGameMode.h"
-#include "FlowExamplesHUD.h"
-#include "FlowExamplesCharacter.h"
+// Copyright 1998-2019 Epic Games, Inc. All Rights Reserved.
+
+#include "ExamplesGameMode.h"
+#include "ExamplesHUD.h"
+#include "ExamplesCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
-AFlowExamplesGameMode::AFlowExamplesGameMode()
+AExamplesGameMode::AExamplesGameMode()
 	: Super()
 {
 	// set default pawn class to our Blueprinted character
@@ -11,5 +13,5 @@ AFlowExamplesGameMode::AFlowExamplesGameMode()
 	DefaultPawnClass = PlayerPawnClassFinder.Class;
 
 	// use our custom HUD class
-	HUDClass = AFlowExamplesHUD::StaticClass();
+	HUDClass = AExamplesHUD::StaticClass();
 }
