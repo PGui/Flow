@@ -2,7 +2,6 @@
 	"BuildId": "10570792",
 	"Modules": 
 	{
-		"FlowExamples": "UE4Editor-FlowExamples.dll",
-		"FlowExamplesEditor": "UE4Editor-FlowExamplesEditor.dll"
+		"Examples": "UE4Editor-Examples.dll"
 	}
 }
