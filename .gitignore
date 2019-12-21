@@ -11,6 +11,4 @@
 *.exp
 *.lib
 *.pdb
-*Shipping.exe
-*Shipping.pdb
-*Shipping.target
+*.target
