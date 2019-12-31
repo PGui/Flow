@@ -1,6 +1,6 @@
-# FlowExamples
+# Flow
 
-Flow Graph is a generic tool to script flow of in-world events in game.
+Flow plug-in for Unreale Engine 4 is a generic graph editor for scriprintg flow of in-world events in game.
 
 ## Flow nodes
 * A single node in this graph is a simple UObject. 
