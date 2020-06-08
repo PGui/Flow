@@ -1,5 +1,5 @@
-#include "ExamplesCharacter.h"
-#include "ExamplesProjectile.h"
+#include "FlowerCharacter.h"
+#include "FlowerProjectile.h"
 #include "Animation/AnimInstance.h"
 #include "Camera/CameraComponent.h"
 #include "Components/CapsuleComponent.h"
@@ -13,9 +13,9 @@
 DEFINE_LOG_CATEGORY_STATIC(LogFPChar, Warning, All);
 
 //////////////////////////////////////////////////////////////////////////
-// AExamplesCharacter
+// AFlowerCharacter
 
-AExamplesCharacter::AExamplesCharacter()
+AFlowerCharacter::AFlowerCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(55.f, 96.0f);
@@ -82,7 +82,7 @@ AExamplesCharacter::AExamplesCharacter()
 	//bUsingMotionControllers = true;
 }
 
-void AExamplesCharacter::BeginPlay()
+void AFlowerCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
@@ -106,7 +106,7 @@ void AExamplesCharacter::BeginPlay()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
-void AExamplesCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
+void AFlowerCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// set up gameplay key bindings
 	check(PlayerInputComponent);
@@ -116,27 +116,27 @@ void AExamplesCharacter::SetupPlayerInputComponent(class UInputComponent* Player
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
 
 	// Bind fire event
-	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AExamplesCharacter::OnFire);
+	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &AFlowerCharacter::OnFire);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
 
-	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AExamplesCharacter::OnResetVR);
+	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &AFlowerCharacter::OnResetVR);
 
 	// Bind movement events
-	PlayerInputComponent->BindAxis("MoveForward", this, &AExamplesCharacter::MoveForward);
-	PlayerInputComponent->BindAxis("MoveRight", this, &AExamplesCharacter::MoveRight);
+	PlayerInputComponent->BindAxis("MoveForward", this, &AFlowerCharacter::MoveForward);
+	PlayerInputComponent->BindAxis("MoveRight", this, &AFlowerCharacter::MoveRight);
 
 	// We have 2 versions of the rotation bindings to handle different kinds of devices differently
 	// "turn" handles devices that provide an absolute delta, such as a mouse.
 	// "turnrate" is for devices that we choose to treat as a rate of change, such as an analog joystick
 	PlayerInputComponent->BindAxis("Turn", this, &APawn::AddControllerYawInput);
-	PlayerInputComponent->BindAxis("TurnRate", this, &AExamplesCharacter::TurnAtRate);
+	PlayerInputComponent->BindAxis("TurnRate", this, &AFlowerCharacter::TurnAtRate);
 	PlayerInputComponent->BindAxis("LookUp", this, &APawn::AddControllerPitchInput);
-	PlayerInputComponent->BindAxis("LookUpRate", this, &AExamplesCharacter::LookUpAtRate);
+	PlayerInputComponent->BindAxis("LookUpRate", this, &AFlowerCharacter::LookUpAtRate);
 }
 
-void AExamplesCharacter::OnFire()
+void AFlowerCharacter::OnFire()
 {
 	// try and fire a projectile
 	if (ProjectileClass != NULL)
@@ -148,7 +148,7 @@ void AExamplesCharacter::OnFire()
 			{
 				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
 				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<AExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				World->SpawnActor<AFlowerProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
 			}
 			else
 			{
@@ -161,7 +161,7 @@ void AExamplesCharacter::OnFire()
 				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
 				// spawn the projectile at the muzzle
-				World->SpawnActor<AExamplesProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+				World->SpawnActor<AFlowerProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
 			}
 		}
 	}
@@ -184,12 +184,12 @@ void AExamplesCharacter::OnFire()
 	}
 }
 
-void AExamplesCharacter::OnResetVR()
+void AFlowerCharacter::OnResetVR()
 {
 	UHeadMountedDisplayFunctionLibrary::ResetOrientationAndPosition();
 }
 
-void AExamplesCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
+void AFlowerCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
 	if (TouchItem.bIsPressed == true)
 	{
@@ -205,7 +205,7 @@ void AExamplesCharacter::BeginTouch(const ETouchIndex::Type FingerIndex, const F
 	TouchItem.bMoved = false;
 }
 
-void AExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
+void AFlowerCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location)
 {
 	if (TouchItem.bIsPressed == false)
 	{
@@ -217,7 +217,7 @@ void AExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVe
 //Commenting this section out to be consistent with FPS BP template.
 //This allows the user to turn without using the right virtual joystick
 
-//void AExamplesCharacter::TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location)
+//void AFlowerCharacter::TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location)
 //{
 //	if ((TouchItem.bIsPressed == true) && (TouchItem.FingerIndex == FingerIndex))
 //	{
@@ -252,7 +252,7 @@ void AExamplesCharacter::EndTouch(const ETouchIndex::Type FingerIndex, const FVe
 //	}
 //}
 
-void AExamplesCharacter::MoveForward(float Value)
+void AFlowerCharacter::MoveForward(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -261,7 +261,7 @@ void AExamplesCharacter::MoveForward(float Value)
 	}
 }
 
-void AExamplesCharacter::MoveRight(float Value)
+void AFlowerCharacter::MoveRight(float Value)
 {
 	if (Value != 0.0f)
 	{
@@ -270,27 +270,27 @@ void AExamplesCharacter::MoveRight(float Value)
 	}
 }
 
-void AExamplesCharacter::TurnAtRate(float Rate)
+void AFlowerCharacter::TurnAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerYawInput(Rate * BaseTurnRate * GetWorld()->GetDeltaSeconds());
 }
 
-void AExamplesCharacter::LookUpAtRate(float Rate)
+void AFlowerCharacter::LookUpAtRate(float Rate)
 {
 	// calculate delta for this frame from the rate information
 	AddControllerPitchInput(Rate * BaseLookUpRate * GetWorld()->GetDeltaSeconds());
 }
 
-bool AExamplesCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerInputComponent)
+bool AFlowerCharacter::EnableTouchscreenMovement(class UInputComponent* PlayerInputComponent)
 {
 	if (FPlatformMisc::SupportsTouchInput() || GetDefault<UInputSettings>()->bUseMouseForTouch)
 	{
-		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AExamplesCharacter::BeginTouch);
-		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AExamplesCharacter::EndTouch);
+		PlayerInputComponent->BindTouch(EInputEvent::IE_Pressed, this, &AFlowerCharacter::BeginTouch);
+		PlayerInputComponent->BindTouch(EInputEvent::IE_Released, this, &AFlowerCharacter::EndTouch);
 
 		//Commenting this out to be more consistent with FPS BP template.
-		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AExamplesCharacter::TouchUpdate);
+		//PlayerInputComponent->BindTouch(EInputEvent::IE_Repeat, this, &AFlowerCharacter::TouchUpdate);
 		return true;
 	}
 	

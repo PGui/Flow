@@ -5,7 +5,7 @@
 	"Description": "",
 	"Modules": [
 		{
-			"Name": "Examples",
+			"Name": "Flower",
 			"Type": "Runtime",
 			"LoadingPhase": "Default"
 		}

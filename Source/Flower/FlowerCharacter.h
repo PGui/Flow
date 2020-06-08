@@ -2,12 +2,12 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "ExamplesCharacter.generated.h"
+#include "FlowerCharacter.generated.h"
 
 class UInputComponent;
 
 UCLASS(config=Game)
-class AExamplesCharacter : public ACharacter
+class AFlowerCharacter : public ACharacter
 {
 	GENERATED_BODY()
 
@@ -44,7 +44,7 @@ class AExamplesCharacter : public ACharacter
 	class UMotionControllerComponent* L_MotionController;
 
 public:
-	AExamplesCharacter();
+	AFlowerCharacter();
 
 protected:
 	virtual void BeginPlay();
@@ -64,7 +64,7 @@ public:
 
 	/** Projectile class to spawn */
 	UPROPERTY(EditDefaultsOnly, Category=Projectile)
-	TSubclassOf<class AExamplesProjectile> ProjectileClass;
+	TSubclassOf<class AFlowerProjectile> ProjectileClass;
 
 	/** Sound to play each time we fire */
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category=Gameplay)

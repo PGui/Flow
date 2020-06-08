@@ -1,8 +1,8 @@
 using UnrealBuildTool;
 
-public class Examples : ModuleRules
+public class Flower : ModuleRules
 {
-    public Examples(ReadOnlyTargetRules Target) : base(Target)
+    public Flower(ReadOnlyTargetRules Target) : base(Target)
     {
         bUseUnity = false;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
