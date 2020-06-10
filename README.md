@@ -1,6 +1,6 @@
-# Flow
+# Flow Graph
 
-Flow plug-in for Unreal Engine 4 is a simple graph editor tailored for scriprintg flow of in-world events in game. 
+Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scriprintg flow of in-world events in game. 
 * Licensed under MIT licence. You are free to use it for commercial projects, modify, distribute :)
 
 ## Concept
