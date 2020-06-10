@@ -8,5 +8,5 @@ Flow plug-in for Unreal Engine 4 is a simple graph editor tailored for scriprint
 * A single node in this graph is a simple UObject, not a function like in blueprints. This allows you encapsulate entire logic and data of given "action" in the single node. 
 * Every node can have different setup of pins, so user can easily control flow of events in the graph.
 * Gameplay programmer/designer simply call function to trigger execution of pins any way he needs. API is extremely simple.
-* Added convenient displaying debug information on nodes and wires while playing a game. It's also easy to add your custom debugging information on every node.
+* Added convenient displaying debug information on nodes and wires while playing a game. It's easy to add custom debugging information on specific nodes, you can't have that with blueprint functions.
 * Systems based on such editor are simple to use for least technical team members, i.e. narrative designers, writers.
