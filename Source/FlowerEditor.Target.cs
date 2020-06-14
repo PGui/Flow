@@ -7,6 +7,6 @@ public class FlowerEditorTarget : TargetRules
 		Type = TargetType.Editor;
 		ExtraModuleNames.Add("Flower");
 
-        //DefaultBuildSettings = BuildSettingsVersion.V2;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
     }
 }

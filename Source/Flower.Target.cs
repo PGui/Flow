@@ -7,6 +7,6 @@ public class FlowerTarget : TargetRules
 		Type = TargetType.Game;
 		ExtraModuleNames.Add("Flower");
 
-        //DefaultBuildSettings = BuildSettingsVersion.V2;
+        DefaultBuildSettings = BuildSettingsVersion.V2;
     }
 }
