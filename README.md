@@ -18,5 +18,5 @@ Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scr
 
 ## Recommended workflow
 * Flow Graph is meant to entirely replace a need to use Level Blueprints in production maps. The flow of the game (the connection between consecutive events and actors) should be scripted using this graph only. Otherwise, you ending up creating a mess - using multiple tools for scripting events.
-* For the same reason, it's recommended to entirely forget about referencing different actors directly, i.e. hooking up Spawner or Door actor directly to the Trigger actor.
+* For the same reason, it's recommended to entirely forget about referencing different actors directly, i.e. hooking up Spawner or Door actor directly to the Trigger actor. Technically it works fine, but it's impossible to read the designed flow of events scripted this way. And debugging it can be very cumbersome.
 * Blueprints are supposed to be used mostly to script the inner logic of actors, not a connection between actors belonging to different systems.
