@@ -5,13 +5,13 @@ Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scr
 
 ## Concept
 * It's design-agnostic, a bit customized node editor. It's up to you to add game-specific functionalities by writing your nodes.
-* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire logic and data of the given "action" in the single node.
+* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire logic and data for the given gameplay element in the single node.
 * Every node can have a different setup of pins, so users can easily control flow of events in the graph.
 * Gameplay programmer/designer simply calls a function to trigger the execution of pins any way he needs. API is extremely simple.
 * Added convenient displaying debug information on nodes and wires while playing a game. Quickly add custom debugging information on specific nodes, you can't have that with blueprint functions.
 
 ## Simplicity is a key
-* Even a huge game would typically need only a few dozens of nodes if implemented correctly. It makes easy to manage complex games - complex in terms of mechanics, multiplayer and narrative events.
+* Even a huge game would typically need only a few dozens of Flow nodes. It makes it easy to manage game's complexity - in terms of mechanics, narrative events, lengthy campaigns and handling multiplayer. This concept scales very well.
 * Systems based on such editor are simple to use for least technical team members, i.e. narrative designers, writers, QA.
 * Anyone writing a new gameplay feature can quickly expose it to content creators by creating a new Flow Node. This way a given feature doesn't have to be exposed to blueprints.
 * Code of gameplay mechanics wouldn't ever be mixed with other systems, they don't know about each other. Flow Graph is a place to mix features by connecting nodes.
