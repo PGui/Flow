@@ -7,24 +7,20 @@ public class Flower : ModuleRules
         bUseUnity = false;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
-        PublicDependencyModuleNames.AddRange(
-            new string[]
-            {
-                "Core",
-                "CoreUObject",
-                "Engine",
-                "InputCore",
-                "HeadMountedDisplay"
-            }
-        );
+        PublicDependencyModuleNames.AddRange(new string[]
+        {
+            "Core",
+            "CoreUObject",
+            "Engine",
+            "InputCore",
+            "HeadMountedDisplay"
+        });
 
-        PrivateDependencyModuleNames.AddRange(
-            new string[]
-            {
-                "Slate",
-                "SlateCore",
-                "UMG"
-            }
-        );
+        PrivateDependencyModuleNames.AddRange(new string[]
+        {
+            "Slate",
+            "SlateCore",
+            "UMG"
+        });
     }
 }
