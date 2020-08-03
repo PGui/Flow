@@ -9,15 +9,16 @@ public class Flower : ModuleRules
 
         PublicDependencyModuleNames.AddRange(new string[]
         {
-            "Core",
-            "CoreUObject",
-            "Engine",
-            "InputCore",
-            "HeadMountedDisplay"
+            "Flow"
         });
 
         PrivateDependencyModuleNames.AddRange(new string[]
         {
+            "Core",
+            "CoreUObject",
+            "Engine",
+            "InputCore",
+            "GameplayTags",
             "Slate",
             "SlateCore",
             "UMG"
