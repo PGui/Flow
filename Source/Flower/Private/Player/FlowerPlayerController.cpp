@@ -68,13 +68,13 @@ void AFlowerPlayerController::ActivateInteraction(const TWeakObjectPtr<UInteract
 	}
 	
 	ActiveInteraction = Interaction;
-	GetGameInstance()->GetSubsystem<UFlowerUIManager>()->ToggleWidget(UFlowerSettings::Get()->InteractionWidget);
+	GetGameInstance()->GetSubsystem<UFlowerUIManager>()->OpenWidget(UFlowerSettings::Get()->InteractionWidget);
 }	
 
 void AFlowerPlayerController::DectivateInteraction()
 {
 	ActiveInteraction = nullptr;
-	GetGameInstance()->GetSubsystem<UFlowerUIManager>()->ToggleWidget(UFlowerSettings::Get()->InteractionWidget);
+	GetGameInstance()->GetSubsystem<UFlowerUIManager>()->CloseWidget(UFlowerSettings::Get()->InteractionWidget);
 }
 
 void AFlowerPlayerController::OnInteractionUsed()
