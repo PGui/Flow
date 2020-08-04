@@ -11,5 +11,6 @@
 *.exe
 *.exp
 *.lib
+*.patch_*
 *.pdb
 *.target
