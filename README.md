@@ -7,10 +7,11 @@ Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scr
 * It's design-agnostic, a bit customized node editor. It's up to you to add game-specific functionalities by writing your nodes.
 * A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire logic and data for the given gameplay element in the single node.
 * Every node can have a different setup of pins, so users can easily control flow of events in the graph.
-* Gameplay programmer/designer simply calls a function to trigger the execution of pins any way he needs. API is extremely simple.
-* Added convenient displaying debug information on nodes and wires while playing a game. Quickly add custom debugging information on specific nodes, you can't have that with blueprint functions.
+* Gameplay programmer/designer simply calls a function to trigger the execution of pins any way he needs. API is extremely simple. There are literally few methods to call, all you need to control the flow.
+* Editor supports convenient displaying debug information on nodes and wires while playing a game. Quickly add custom debugging information on specific nodes, you can't have that with blueprint functions.
 
 ## Simplicity is a key
+* System is designed to simplify the work of gameplay programmers and non-programmer users. A clean interface between systems and using these systems.
 * Even a huge game would typically need only a few dozens of Flow nodes. It makes it easy to manage game's complexity - in terms of mechanics, narrative events, lengthy campaigns and handling multiplayer. This concept scales very well.
 * Systems based on such editor are simple to use for least technical team members, i.e. narrative designers, writers, QA.
 * Anyone writing a new gameplay feature can quickly expose it to content creators by creating a new Flow Node. This way a given feature doesn't have to be exposed to blueprints.
@@ -20,3 +21,4 @@ Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scr
 * Flow Graph is meant to entirely replace a need to use Level Blueprints in production maps. The flow of the game (the connection between consecutive events and actors) should be scripted using this graph only. Otherwise, you ending up creating a mess - using multiple tools for scripting events.
 * For the same reason, it's recommended to entirely forget about referencing different actors directly, i.e. hooking up Spawner or Door actor directly to the Trigger actor. Technically it works fine, but it's impossible to read the designed flow of events scripted this way. And debugging it can be very cumbersome.
 * Blueprints are supposed to be used mostly to script the inner logic of actors, not a connection between actors belonging to different systems.
+* Flow graph communicates with actors in the world by using Gameplay Tags. No direct references to actors are used in this variant of scripting - that brings more flexibility in crafting systems and making the most from such system.
