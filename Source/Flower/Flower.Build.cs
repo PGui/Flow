@@ -14,6 +14,7 @@ public class Flower : ModuleRules
 
         PrivateDependencyModuleNames.AddRange(new string[]
         {
+            "AIModule",
             "Core",
             "CoreUObject",
             "Engine",
