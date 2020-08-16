@@ -26,7 +26,7 @@ It's s design-agnostic event node editor.
 Flow graph communicates with actors in the world by using Gameplay Tags. No direct references to actors are used in this variant of scripting - that brings more flexibility in crafting systems.
 * It allows for reusing entire event graphs, unlikely to level blueprints. Graphs aren't bound to levels.
 * It's possible to place actors used in the single Flow Graph in different sublevels or even worlds - as Flow Graph could live as long as game session, not bound to the world.
-* It should work well with upcoming World Partition - a trully open-world way of building worlds where every actor instance is saved separately to disk. That probably means no sublevels and no level blueprints (except the blueprint of the "persistent level").
+* It should work well with upcoming World Partition - a trully open-world way of building maps where every actor instance is saved separately to disk. That probably means no sublevels and no level blueprints (except the blueprint of the "persistent level").
 * Using Gameplay Tags allow to script an action on any actor spawned in runtime, typically NPCs.
 * In some cases actor with given Gameplay Tag doesn't even have to exist when running related action! Example: On Trigger Enter in the image above would pick up required trigger just after loading sublevel with this trigger.
 
