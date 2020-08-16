@@ -4,10 +4,12 @@ Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scr
 * Licensed under MIT license. You are free to use it for commercial projects, modify, distribute
 
 ## Concept
+It's s design-agnostic event node editor. 
+* It's up to you to add game-specific functionalities by writing your nodes and editor customizations. 
+* Quickly build your own Quest system, Dialogue system or any other custom system that would control flow of events in the game.
 
 ![Flow_ReadMe](https://user-images.githubusercontent.com/5065057/90341166-96538f80-dffd-11ea-8ea4-98111c812662.png)
 
-* It's design-agnostic event node editor. It's up to you to add game-specific functionalities by writing your nodes and editor customizations. Quickly build your own Quest system, Dialogue system or any other custom system that would control flow of events in the game.
 * A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with data) in the single node.
 * Every node can have a different setup of pins, so users can easily control flow of events in the graph.
 * Gameplay programmer/designer simply calls a function to trigger the execution of pins any way he needs. API is extremely simple. There are literally few methods to call, all you need to control the flow.
