@@ -24,7 +24,7 @@ It's s design-agnostic event node editor.
 * Code of gameplay mechanics wouldn't ever be mixed with other systems, they don't know about each other. Flow Graph is a place to mix features by connecting nodes.
 
 ## Flexibility of the system design
-Flow graph communicates with actors in the world by using Gameplay Tags. No direct references to actors are used in this variant of scripting - that brings more flexibility in crafting systems.
+Flow graph communicates with actors in the world by using Gameplay Tags. No direct references to actors are used in this variant of scripting - that brings more flexibility to the system design.
 * It allows for reusing entire event graphs, unlikely to level blueprints. Graphs aren't bound to levels.
 * It's possible to place actors used in the single Flow Graph in different sublevels or even worlds - as Flow Graph could live as long as game session, not bound to the world.
 * It should work well with upcoming World Partition - a trully open-world way of building maps where every actor instance is saved separately to disk. That probably means no sublevels and no level blueprints (except the blueprint of the "persistent level").
