@@ -1,7 +1,8 @@
 # Flow
 
 Flow plug-in for Unreal Engine 4 provides a simple graph editor tailored for scripting flow of in-world events in game.
-* Licensed under MIT license. You are free to use it for commercial projects, modify, distribute
+* Licensed under MIT license. You are free to use it for commercial projects, modify it however you see fit and distribute further.
+* Just don't try to sell on any digital marketplace as-is, without adding something substantial to it. It would be a scam.
 
 ## Concept
 It's s design-agnostic event node editor. 
