@@ -9,7 +9,7 @@ It's s design-agnostic event node editor.
 * Quickly build your own Quest system, Dialogue system or any other custom system that would control flow of events in the game.
 * Expand it, build articy:draft equivavalent right in the Unreal Engine.
 
-![Flow_ReadMe](https://user-images.githubusercontent.com/5065057/90341166-96538f80-dffd-11ea-8ea4-98111c812662.png)
+![image](https://user-images.githubusercontent.com/5065057/92635150-a8abab00-f2d5-11ea-9241-994b5d56b04d.png)
 
 * A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with data) in the single node.
 * Every node can have a different setup of pins, so users can easily control flow of events in the graph.
