@@ -57,5 +57,5 @@ I feel it's important to mention that I did invent anything new here, with the F
 * Check [Issues](https://github.com/MothCocoon/Flow/issues) for a list of useful things I'm hoping to work on in the future.
 
 ## Contact
-* Catch me on the Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
-* Discuss with other on the dedicated Discord server: [Flow Discord](https://discord.gg/2hSeHZ)
+* Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
+* Discuss with others on the Discord server: [Flow Discord](https://discord.gg/2hSeHZ)
