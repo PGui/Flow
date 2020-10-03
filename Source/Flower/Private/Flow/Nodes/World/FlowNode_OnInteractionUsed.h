@@ -9,7 +9,7 @@ class UInteractionComponent;
 /**
  * On Interaction Used
  */
-UCLASS(meta = (DisplayName = "On Interaction Used"))
+UCLASS(NotBlueprintable, meta = (DisplayName = "On Interaction Used"))
 class UFlowNode_OnInteractionUsed final : public UFlowNode_ComponentObserver
 {
 	GENERATED_UCLASS_BODY()

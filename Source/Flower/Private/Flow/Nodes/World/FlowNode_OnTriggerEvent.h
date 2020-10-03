@@ -8,7 +8,7 @@ class UFlowComponent;
 /**
  * On Trigger Event
  */
-UCLASS(Abstract)
+UCLASS(Abstract, NotBlueprintable)
 class UFlowNode_OnTriggerEvent : public UFlowNode_ComponentObserver
 {
 	GENERATED_UCLASS_BODY()
