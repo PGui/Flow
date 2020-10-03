@@ -8,7 +8,7 @@
 /**
  * Set Interaction State
  */
-UCLASS(meta = (DisplayName = "Set Interaction State"))
+UCLASS(NotBlueprintable, meta = (DisplayName = "Set Interaction State"))
 class UFlowNode_SetInteractionState final : public UFlowNode
 {
 	GENERATED_UCLASS_BODY()

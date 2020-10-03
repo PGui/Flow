@@ -10,7 +10,7 @@
 /**
  * Simple Spawn
  */
-UCLASS(meta = (DisplayName = "Simple Spawn"))
+UCLASS(NotBlueprintable, meta = (DisplayName = "Simple Spawn"))
 class UFlowNode_SimpleSpawn final : public UFlowNode
 {
 	GENERATED_UCLASS_BODY()
