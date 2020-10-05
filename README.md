@@ -58,4 +58,4 @@ I feel it's important to mention that I didn't invent anything new here, with th
 
 ## Contact
 * Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
-* Discuss with others on the Discord server: [Flow Discord](https://discord.gg/2hSeHZ)
+* Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
