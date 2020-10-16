@@ -27,9 +27,9 @@ private:
 #endif
 
 public:
-	FLOW_API UShapeComponent* GetCollisionComponent() const { return CollisionComponent; }
+	UShapeComponent* GetCollisionComponent() const { return CollisionComponent; }
 
 #if WITH_EDITORONLY_DATA
-	FLOW_API UBillboardComponent* GetSpriteComponent() const { return SpriteComponent; }
+	UBillboardComponent* GetSpriteComponent() const { return SpriteComponent; }
 #endif
 };
