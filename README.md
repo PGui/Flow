@@ -1,6 +1,6 @@
 # Flow
 
-Flow plug-in for Unreal Engine provides a graph editor tailored for scripting flow of events in virtual worlds. It's based on nearly a decade of experience with designing and implementing narrative in video games. All we need here is... simplicity.
+Flow plug-in for Unreal Engine provides a graph editor tailored for scripting flow of events in virtual worlds. It's based on nearly a decade of experience with designing and implementing narrative in video games. All we need here is a simplicity.
 * Licensed under MIT license. You are free to use it for commercial projects, modify it however you see fit and distribute further.
 
 ## Concept
