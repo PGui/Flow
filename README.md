@@ -5,16 +5,18 @@ Flow plug-in for Unreal Engine provides a graph editor tailored for scripting fl
 
 ## Concept
 It's s design-agnostic event node editor.
-* It's up to you to add game-specific functionalities by writing your nodes and editor customizations. It's not like a marketplace providing the very specific implementation of systems. It's a convenient base for building systems tailored to fit your needs.
-* Quickly build your own Quest system, Dialogue system or any other custom system that would control the flow of events in the game.
-* Expand it, build articy:draft equivalent right in the Unreal Engine.
 
 ![image](https://user-images.githubusercontent.com/5065057/97006262-e429ce00-153f-11eb-9dfd-5dff1fca6d6b.png)
 
-* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with data) withing the single Flow Node.
-* Every node defines its own set of Input/Output pins, so its deadly simple to design interactions between systems.
-* Call the execution of pins any way you need. API is extremely simple.
+* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) withing the single Flow Node.
+* Every node defines its own set of input/output pins. It's deadly simple to design flow of the game - just connect nodes representing features.
+* Developers creating a Flow Node can call the execution of pins any way they need. API is extremely simple.
 * Editor supports convenient displaying debug information on nodes and wires while playing a game. You simply provide what kind of message would be displayed over active Flow Nodes - you can't have that with blueprint functions.
+
+## Base for your own systems and tools
+* It's up to you to add game-specific functionalities by writing your nodes and editor customizations. It's not like a marketplace providing the very specific implementation of systems. It's a convenient base for building systems tailored to fit your needs.
+* Quickly build your own Quest system, Dialogue system or any other custom system that would control the flow of events in the game.
+* Expand it, build articy:draft equivalent right in the Unreal Engine.
 
 ## Simplicity is a key
 * It's all about simplifying the cooperation between gameplay programmers and non-programmer people by providing a clean interface between "code of systems" and "using systems".
