@@ -6,7 +6,7 @@ Flow plug-in for Unreal Engine provides a graph editor tailored for scripting fl
 ## Concept
 It's s design-agnostic event node editor.
 
-![image](https://user-images.githubusercontent.com/5065057/97006262-e429ce00-153f-11eb-9dfd-5dff1fca6d6b.png)
+![Flow101](https://user-images.githubusercontent.com/5065057/103543817-6d924080-4e9f-11eb-87d9-15ab092c3875.png)
 
 * A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) withing the single Flow Node.
 * Every node defines its own set of input/output pins. It's deadly simple to design flow of the game - just connect nodes representing features.
