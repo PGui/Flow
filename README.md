@@ -61,3 +61,8 @@ I feel it's important to mention that I didn't invent anything new here, with th
 ## Contact
 * Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
 * Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
+
+## Related talks
+* [Behind the Scenes of the Cinematic Dialogues in The Witcher 3: Wild Hunt](https://www.youtube.com/watch?v=chf3REzAjgI)
+* [Sinking City - story scripting for open world game](https://youtu.be/W_yiopwoXt0?t=929) as part of their talk on Sinking City development
+* [The Visual Logger: For All Your Gameplay Needs!](https://www.youtube.com/watch?v=hWpbco3F4L4)
