@@ -19,7 +19,7 @@ It's s design-agnostic event node editor.
 * Expand it, build articy:draft equivalent right in the Unreal Engine.
 
 ## Simplicity is a key
-* It's all about simplifying the cooperation between gameplay programmers and non-programmer people by providing a clean interface between "code of systems" and "using systems".
+* It's all about simplifying the cooperation between gameplay programmers and content designers by providing a clean interface between "code of systems" and "using systems".
 * Code of gameplay mechanics wouldn't ever be mixed with each other. Usually, system X shouldn't even know about the existence of system Y. Flow Graph is a place to combine features by connecting nodes.
 * Every mechanic is exposed to content designers once, in one way only - as the Flow Node. It greatly reduces the number of bugs. Refactoring mechanics is easy since you don't have to update dozens of level blueprints directly calling system functions.
 * Systems based on such editor are simple to use for least technical team members, i.e. narrative designers, writers, QA. Every time I ask designers why they love working with such system, they usually reply: "it's so simple to understand and make a game with it".
