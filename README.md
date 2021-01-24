@@ -62,8 +62,9 @@ I feel it's important to mention that I didn't invent anything new here, with th
 * Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
 * Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
 
-## Related talks
+## Related resources
 * [Behind the Scenes of the Cinematic Dialogues in The Witcher 3: Wild Hunt](https://www.youtube.com/watch?v=chf3REzAjgI)
 * [Sinking City - story scripting for open world game](https://youtu.be/W_yiopwoXt0?t=929) as part of their talk on Sinking City development
 * [Unreal Engine Open World Preview and Landscape Tools | Unreal Dev Days 2019](https://www.youtube.com/watch?v=wXbyqGYfM1I) - starts from describing upcoming open-world streaming system that might no longer use level blueprints
 * [The Visual Logger: For All Your Gameplay Needs!](https://www.youtube.com/watch?v=hWpbco3F4L4)
+* [Gamedec exemplifies how to incorporate complex branching pathways using Unreal Engine](https://www.unrealengine.com/en-US/tech-blog/gamedec-exemplifies-how-to-incorporate-complex-branching-pathways-using-unreal-engine) - example how integration of Artict:Draft with Unreal Engine looks like
