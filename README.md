@@ -63,6 +63,7 @@ I feel it's important to mention that I didn't invent anything new here, with th
 * Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
 
 ## Related resources
+* [Introduction to Gameplay Tags](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Tags/index.html)
 * [Behind the Scenes of the Cinematic Dialogues in The Witcher 3: Wild Hunt](https://www.youtube.com/watch?v=chf3REzAjgI)
 * [Sinking City - story scripting for open world game](https://youtu.be/W_yiopwoXt0?t=929) as part of their talk on Sinking City development
 * [Unreal Engine Open World Preview and Landscape Tools | Unreal Dev Days 2019](https://www.youtube.com/watch?v=wXbyqGYfM1I) - starts from describing upcoming open-world streaming system that might no longer use level blueprints
