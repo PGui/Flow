@@ -16,7 +16,7 @@ AFlowTriggerBase::AFlowTriggerBase(const FObjectInitializer& ObjectInitializer)
 
 	// AFlowTriggerBase is requesting UShapeComponent which is abstract, however it is responsibility
 	// of a derived class to override this type with ObjectInitializer.SetDefaultSubobjectClass.
-	CollisionComponent = CreateDefaultSubobject<UShapeComponent>(TEXT("CollisionComp"));
+	CollisionComponent = CreateAbstractDefaultSubobject<UShapeComponent>(TEXT("CollisionComp"));
 	if (CollisionComponent)
 	{
 		RootComponent = CollisionComponent;
