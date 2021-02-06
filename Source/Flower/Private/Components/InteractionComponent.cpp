@@ -1,19 +1,23 @@
-#include "Components/InteractionComponent.h"
+#include "InteractionComponent.h"
+
 #include "Camera/PlayerCameraManager.h"
+#include "GameFramework/PlayerController.h"
 
 FPlayerInInteractionEvent UInteractionComponent::OnPlayerEnter;
 FPlayerInInteractionEvent UInteractionComponent::OnPlayerExit;
 
 UInteractionComponent::UInteractionComponent(const FObjectInitializer& ObjectInitializer)
 	: Super(ObjectInitializer)
+	, bEnabled(false)
 	, Distance(100.0f)
+	, bCanInteract(false)
 {
 	bAutoActivate = true;
 
 	PrimaryComponentTick.bCanEverTick = true;
 	PrimaryComponentTick.bStartWithTickEnabled = false;
 
-	SetUsingAbsoluteScale(true);
+	bAbsoluteScale = true;
 	ArrowColor = FColor::Red;
 	ArrowSize = 0.5f;
 }

@@ -10,7 +10,5 @@ public class FlowerEditorTarget : TargetRules
 		{ 
 			"Flower"
 		});
-
-        DefaultBuildSettings = BuildSettingsVersion.V2;
     }
 }

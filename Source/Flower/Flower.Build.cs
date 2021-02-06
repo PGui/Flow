@@ -4,7 +4,6 @@ public class Flower : ModuleRules
 {
     public Flower(ReadOnlyTargetRules Target) : base(Target)
     {
-        bUseUnity = false;
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 
         PublicDependencyModuleNames.AddRange(new string[]
