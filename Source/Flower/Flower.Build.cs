@@ -17,6 +17,7 @@ public class Flower : ModuleRules
             "AIModule",
             "Core",
             "CoreUObject",
+            "DeveloperSettings",
             "Engine",
             "InputCore",
             "GameplayTags",
