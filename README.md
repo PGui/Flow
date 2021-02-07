@@ -58,10 +58,13 @@ I feel it's important to mention that I didn't invent anything new here, with th
 * Finally got an opportunity to work on something like this at [Reikon Games](http://www.reikongames.com/). They badly wanted to build a better tool for implementing game flow than level blueprints or existing Marketplace plug-ins. I was very much interested in this since the studio was just starting with the production of the new title. And we did exactly that, created node editor dedicated to scripting game flow. Kudos to Dariusz Murawski - a programmer who spent a few months with me to establish the working system and editor. And who had to endure my never-ending feedback and requests.
 * At some point I felt comfortable enough with programming editor tools so I decided to build my own version of such toolset. Written from the scratch, meant to be published as an open-source project. I am thankful to Reikon bosses they see no issues with me releasing Flow Graph, which is "obviously" similar to our internal tool in many ways. I mean, it's so simple concept of "single node representing a single game feature"... and it's based on the same UE4 node graph API. Some corporations might have an issue with that.
 
-## Further development
-* Now I'm working on a short video presenting the Flow Graph.
+## State of the development
+* Flow editor and runtime system are ready for production. Plugin is used already in few small projects.
+* Now I'm working on a short video presenting the Flow Graph. It should come in February, explaining the concept and encouraging people to try it out :)
+* Development continues. Check [Issues](https://github.com/MothCocoon/Flow/issues) for a list of useful things I'm hoping to work on in the future.
+* In the short term, code might need a bit love to support creating multiple flow-based systems without modifying the plugin code at all. For example, quest and dialogue system based on the Flow Subsystem. It's not a huge work, plugin was designed for it. It's just need time to create a few different systems, play with it, update plugin where's needed. 
+* Your feedback is much welcome! It's all about developing toolset for any kind of game.
 * I'm planning to release the Flow plugin on the Marketplace, so more people could discover it and conveniently add to their asset libraries. It will be free of charge, obviously.
-* Check [Issues](https://github.com/MothCocoon/Flow/issues) for a list of useful things I'm hoping to work on in the future.
 
 ## Contact
 * Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
