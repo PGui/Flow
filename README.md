@@ -8,7 +8,7 @@ It's s design-agnostic event node editor.
 
 ![Flow101](https://user-images.githubusercontent.com/5065057/103543817-6d924080-4e9f-11eb-87d9-15ab092c3875.png)
 
-* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) within a single Flow Node.
+* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) within a single Flow Node. The idea is that your write repeatable part of the event logic only once for the entire game!
 * Every node defines its own set of input/output pins. It's deadly simple to design flow of the game - just connect nodes representing features.
 * Developers creating a Flow Node can call the execution of pins any way they need. API is extremely simple.
 * Editor supports convenient displaying debug information on nodes and wires while playing a game. You simply provide what kind of message would be displayed over active Flow Nodes - you can't have that with blueprint functions.
@@ -27,7 +27,11 @@ It's s design-agnostic event node editor.
 
 ## Blueprints
 * Programmer writing a new gameplay feature can quickly expose it to content creators by creating a new Flow Node. A given C++ feature doesn't have to be exposed to blueprints at all.
-* However, Flow Nodes can be created in blueprints by anyone.
+* However, Flow Nodes can be created in blueprints by anyone. Personally I would recommend using blueprint nodes mostly for prototyping and rarely used custom actions, if you have a gameplay programmer in a team. If not, sure, you can implement your systems in blueprints entirely.
+
+## Performance
+* Performance loss in blueprint graphs come from executing large network of nodes, processing pins and connection between them. Moving away from overcomplicated level blueprints and messy "system blueprints" to simple Flow Graph might improve framerate and memory managment. 
+* As Flow Nodes are designed to be event-based, executing graph connection might happen only like few times per minute or so. (heavily depends on your logic and event mechanics). That's make Flow-based systems much more performant, especially if frequently used nodes are implemented in C++.
 
 ## Flexibility of the system design
 Flow Graph communicates with actors in the world by using [Gameplay Tags](https://docs.unrealengine.com/en-US/Gameplay/Tags/index.html). No direct references to actors are used in this variant of scripting - that brings a lot of new possibilities.
@@ -67,5 +71,7 @@ I feel it's important to mention that I didn't invent anything new here, with th
 * [Behind the Scenes of the Cinematic Dialogues in The Witcher 3: Wild Hunt](https://www.youtube.com/watch?v=chf3REzAjgI)
 * [Sinking City - story scripting for open world game](https://youtu.be/W_yiopwoXt0?t=929) as part of their talk on Sinking City development
 * [Unreal Engine Open World Preview and Landscape Tools | Unreal Dev Days 2019](https://www.youtube.com/watch?v=wXbyqGYfM1I) - starts from describing upcoming open-world streaming system that might no longer use level blueprints
+* [Blueprints In-depth - Part 1 | Unreal Fest Europe 2019](https://youtu.be/j6mskTgL7kU?t=1048) - great talk on blueprint system, timestamp at the Performance part.
+* [Blueprints In-depth - Part 2 | Unreal Fest Europe 2019](https://www.youtube.com/watch?v=0YMS2wnykbc)
 * [The Visual Logger: For All Your Gameplay Needs!](https://www.youtube.com/watch?v=hWpbco3F4L4)
 * [Gamedec exemplifies how to incorporate complex branching pathways using Unreal Engine](https://www.unrealengine.com/en-US/tech-blog/gamedec-exemplifies-how-to-incorporate-complex-branching-pathways-using-unreal-engine) - example how integration of Artict:Draft with Unreal Engine looks like
