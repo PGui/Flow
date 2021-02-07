@@ -8,7 +8,7 @@ It's s design-agnostic event node editor.
 
 ![Flow101](https://user-images.githubusercontent.com/5065057/103543817-6d924080-4e9f-11eb-87d9-15ab092c3875.png)
 
-* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) within a single Flow Node.
+* A single node in this graph is a simple UObject, not a function like in blueprints. This allows you to encapsulate the entire gameplay element (logic with its data) within a single Flow Node. The idea is that your write repeatable "event script" only once for the entire game!
 * Every node defines its own set of input/output pins. It's deadly simple to design flow of the game - just connect nodes representing features.
 * Developers creating a Flow Node can call the execution of pins any way they need. API is extremely simple.
 * Editor supports convenient displaying debug information on nodes and wires while playing a game. You simply provide what kind of message would be displayed over active Flow Nodes - you can't have that with blueprint functions.
@@ -27,7 +27,12 @@ It's s design-agnostic event node editor.
 
 ## Blueprints
 * Programmer writing a new gameplay feature can quickly expose it to content creators by creating a new Flow Node. A given C++ feature doesn't have to be exposed to blueprints at all.
-* However, Flow Nodes can be created in blueprints by anyone.
+* However, Flow Nodes can be created in blueprints by anyone. Personally I would recommend using blueprint nodes mostly for prototyping and rarely used custom actions, if you have a gameplay programmer in a team. If not, sure, you can implement your systems in blueprints entirely.
+
+## Performance
+* Performance loss in blueprint graphs come from executing large network of nodes, processing pins and connection between them. Moving away from overcomplicated level blueprints and messy "system blueprints" to simple Flow Graph might improve framerate and memory managment. 
+* As Flow Nodes are designed to be event-based, executing graph connection might happen only like few times per minute or so. (heavily depends on your logic and event mechanics). Finally, Flow Graph has its own execution logic, doesn't utilize blueprint VM.
+* Flow-based event systems are generellay more performant than blueprint counterparts. Especially if frequently used nodes are implemented in C++.
 
 ## Flexibility of the system design
 Flow Graph communicates with actors in the world by using [Gameplay Tags](https://docs.unrealengine.com/en-US/Gameplay/Tags/index.html). No direct references to actors are used in this variant of scripting - that brings a lot of new possibilities.
@@ -46,6 +51,19 @@ Flow Graph communicates with actors in the world by using [Gameplay Tags](https:
 * Flow Nodes can send and receive blueprint events via Flow Component. This recommended way of communicating between Flow Graph and blueprints.
 * Technically, it's always possible to call custom blueprint events directly from blueprint Flow Node, but this would require creating a new Flow Node for every custom blueprint actor. Effectively, you would throw a simplicity of Flow Graph out of the window.
 
+## State of the development
+* Flow editor and runtime system are ready for production. Plugin is used already in few small projects.
+* Plugin and the code of the sample project is available for every engine version since 4.22. I'm not planning on backporting code to older engine versions since my runtime code relies on [programming subsystems](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Subsystems/index.html) introduced with UE 4.22.
+* Now I'm working on a short video presenting the Flow Graph. It should come in February, explaining the concept and encouraging people to try it out :)
+* Development continues. Check [Issues](https://github.com/MothCocoon/Flow/issues) for a list of useful things I'm hoping to work on in the future.
+* Your feedback is much welcome! It's all about developing toolset for any kind of game.
+* In the short term, code might need a bit love to support creating multiple flow-based systems without modifying the plugin code at all. For example, quest and dialogue system based on the Flow Subsystem. It's not a huge work, plugin was designed for it. It's just need time to create a few different systems, play with it, update plugin where's needed. 
+* I'm planning to release the Flow plugin on the Marketplace, so more people could discover it and conveniently add to their asset libraries. It will be free of charge, obviously.
+
+## Contact
+* Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
+* Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
+
 ## Acknowledgements
 I feel it's important to mention that I didn't invent anything new here, with the Flow Graph. It's an old and proven concept. I'm only the one who decided it would be crazy useful to adopt it for Unreal Engine. And make it publically available as my humble contribution to the open-source community.
 * Such simple graph-based tools for scripting game screenplay are utilized for a long time. Traditionally, RPG games needed such tools as there a lot of stories, quest, dialogues.
@@ -53,19 +71,12 @@ I feel it's important to mention that I didn't invent anything new here, with th
 * Finally got an opportunity to work on something like this at [Reikon Games](http://www.reikongames.com/). They badly wanted to build a better tool for implementing game flow than level blueprints or existing Marketplace plug-ins. I was very much interested in this since the studio was just starting with the production of the new title. And we did exactly that, created node editor dedicated to scripting game flow. Kudos to Dariusz Murawski - a programmer who spent a few months with me to establish the working system and editor. And who had to endure my never-ending feedback and requests.
 * At some point I felt comfortable enough with programming editor tools so I decided to build my own version of such toolset. Written from the scratch, meant to be published as an open-source project. I am thankful to Reikon bosses they see no issues with me releasing Flow Graph, which is "obviously" similar to our internal tool in many ways. I mean, it's so simple concept of "single node representing a single game feature"... and it's based on the same UE4 node graph API. Some corporations might have an issue with that.
 
-## Further development
-* Now I'm working on a short video presenting the Flow Graph.
-* I'm planning to release the Flow plugin on the Marketplace, so more people could discover it and conveniently add to their asset libraries. It will be free of charge, obviously.
-* Check [Issues](https://github.com/MothCocoon/Flow/issues) for a list of useful things I'm hoping to work on in the future.
-
-## Contact
-* Catch me on Twitter: [@MothDoctor](https://twitter.com/MothDoctor)
-* Discuss with others on the Discord server: [Flow Discord](https://discord.com/channels/742802606874820619/752181877938323668)
-
 ## Related resources
 * [Introduction to Gameplay Tags](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/Tags/index.html)
 * [Behind the Scenes of the Cinematic Dialogues in The Witcher 3: Wild Hunt](https://www.youtube.com/watch?v=chf3REzAjgI)
 * [Sinking City - story scripting for open world game](https://youtu.be/W_yiopwoXt0?t=929) as part of their talk on Sinking City development
 * [Unreal Engine Open World Preview and Landscape Tools | Unreal Dev Days 2019](https://www.youtube.com/watch?v=wXbyqGYfM1I) - starts from describing upcoming open-world streaming system that might no longer use level blueprints
+* [Blueprints In-depth - Part 1 | Unreal Fest Europe 2019](https://youtu.be/j6mskTgL7kU?t=1048) - great talk on blueprint system, timestamp at the Performance part.
+* [Blueprints In-depth - Part 2 | Unreal Fest Europe 2019](https://www.youtube.com/watch?v=0YMS2wnykbc)
 * [The Visual Logger: For All Your Gameplay Needs!](https://www.youtube.com/watch?v=hWpbco3F4L4)
 * [Gamedec exemplifies how to incorporate complex branching pathways using Unreal Engine](https://www.unrealengine.com/en-US/tech-blog/gamedec-exemplifies-how-to-incorporate-complex-branching-pathways-using-unreal-engine) - example how integration of Artict:Draft with Unreal Engine looks like
