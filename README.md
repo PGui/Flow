@@ -31,7 +31,8 @@ It's s design-agnostic event node editor.
 
 ## Performance
 * Performance loss in blueprint graphs come from executing large network of nodes, processing pins and connection between them. Moving away from overcomplicated level blueprints and messy "system blueprints" to simple Flow Graph might improve framerate and memory managment. 
-* As Flow Nodes are designed to be event-based, executing graph connection might happen only like few times per minute or so. (heavily depends on your logic and event mechanics). That's make Flow-based systems much more performant, especially if frequently used nodes are implemented in C++.
+* As Flow Nodes are designed to be event-based, executing graph connection might happen only like few times per minute or so. (heavily depends on your logic and event mechanics). Finally, Flow Graph has its own execution logic, doesn't utilize blueprint VM.
+* Flow-based event systems are generellay more performant than blueprint counterparts. Especially if frequently used nodes are implemented in C++.
 
 ## Flexibility of the system design
 Flow Graph communicates with actors in the world by using [Gameplay Tags](https://docs.unrealengine.com/en-US/Gameplay/Tags/index.html). No direct references to actors are used in this variant of scripting - that brings a lot of new possibilities.
