@@ -38,6 +38,6 @@ void UFlowNode_SetInteractionState::ExecuteInput(const FName& PinName)
 #if WITH_EDITOR 
 FString UFlowNode_SetInteractionState::GetNodeDescription() const
 {
-	return IdentityTag.IsValid() ? IdentityTag.ToString() : TEXT("Missing Identity Tag!");
+	return IdentityTag.IsValid() ? IdentityTag.ToString() : MissingIdentityTag;
 }
 #endif
