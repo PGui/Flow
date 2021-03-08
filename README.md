@@ -3,6 +3,13 @@
 Flow plug-in for Unreal Engine provides a graph editor tailored for scripting flow of events in virtual worlds. It's based on a decade of experience with designing and implementing narrative in video games. All we need here is a simplicity.
 * Licensed under MIT license. You are free to use it for commercial projects, modify it however you see fit and distribute further.
 
+## Getting started
+In Releases you can find example project called Flower, so you can easily check how this plug-in works.
+
+And if you'd decide to use Flow in your project...
+1. Unpack plug-in to the Plugins folder in your project folder. If you don't have such folder yet, simply create it.
+2. Open Project Settings in editor. Change World Settings to the Flow World Settings class and restart the editor. This class starts the Flow Graph assigned to the map.
+
 ## Concept
 It's s design-agnostic event node editor.
 
