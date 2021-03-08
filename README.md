@@ -18,6 +18,13 @@ It's s design-agnostic event node editor.
 * Quickly build your own Quest system, Dialogue system or any other custom system that would control the flow of events in the game.
 * Expand it, build articy:draft equivalent right in the Unreal Engine.
 
+## Getting started
+In Releases you can find example project called Flower, so you can easily check how this plug-in works.
+
+And if you'd decide to use Flow in your project...
+1. Unpack plug-in to the Plugins folder in your project folder. If you don't have such folder yet, simply create it.
+2. Open Project Settings in editor. Change World Settings to the Flow World Settings class and restart the editor. This class starts the Flow Graph assigned to the map.
+
 ## In-depth video presentation
 This 24-minute presentation breaks down concept of the Flow Graph. It goes through everything written in this ReadMe, but in greater detail.
 
