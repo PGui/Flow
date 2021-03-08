@@ -50,7 +50,7 @@ void UFlowNode_SimpleSpawn::ExecuteInput(const FName& PinName)
 	}
 	else
 	{
-		LogError(TEXT("Missing Identity Tag"));
+		LogError(MissingIdentityTag);
 	}
 
 	TriggerFirstOutput(true);
@@ -64,7 +64,7 @@ void UFlowNode_SimpleSpawn::Cleanup()
 #if WITH_EDITOR 
 FString UFlowNode_SimpleSpawn::GetNodeDescription() const
 {
-	const FString IdentityString = IdentityTag.IsValid() ? IdentityTag.ToString() : TEXT("Missing Identity Tag!");
+	const FString IdentityString = IdentityTag.IsValid() ? IdentityTag.ToString() : MissingIdentityTag;
 	const FString ClassString = SpawnParams.ActorClass ? SpawnParams.ActorClass->GetFName().ToString() : TEXT("Missing Actor Class!");
 
 	return IdentityString + LINE_TERMINATOR + ClassString;
